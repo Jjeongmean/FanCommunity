@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<main layout:fragment="content" class="main">
+    <section class="latest-podcast-section section-padding pb-0" id="section_2">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-lg-12 col-12">
+                    <div class="section-title-wrap mb-5">
+                        <h4 class="section-title">지난 LIVE</h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                    <div class="custom-block d-flex">
+                        <div class="">
+                            <div class="custom-block-icon-wrap">
+                                <div class="section-overlay"></div>
+                                <a href="media" class="custom-block-image-wrap">
+                                    <img src="images/0409도겸.png"
+                                         class="custom-block-image img-fluid" alt="">
+
+                                    <a href="#" class="custom-block-icon">
+                                        <i class="bi-play-fill"></i>
+                                    </a>
+                                </a>
+                            </div>
+
+                            <div class="mt-2">
+                                <a href="#" class="btn custom-btn">
+                                    Following
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="custom-block-info">
+                            <div class="custom-block-top d-flex mb-1">
+                                <small class="me-4">
+                                    <i class="bi-clock-fill custom-icon"></i>
+                                    18m 36s
+                                </small>
+
+                                <small>Episode <span class="badge">1</span></small>
+                            </div>
+
+                            <h5 class="mb-2">
+                                <a href="media.html">
+                                    잠이안온다
+                                </a>
+                            </h5>
+
+                            <div class="profile-block d-flex">
+                                <img src="images/⑩석민.jfif"
+                                     class="profile-block-image img-fluid" alt="">
+
+                                <p>
+                                    캐럿바라기🌻
+                                    <img src="images/verified.png" class="verified-image img-fluid" alt="">
+                                    <strong>세븐틴</strong>
+                                </p>
+                            </div>
+
+                            <p class="mb-0">4시간 밖에 못잠 도겸이</p>
+
+                            <div class="custom-block-bottom d-flex justify-content-between mt-3">
+                                <a href="#" class="bi-headphones me-1">
+                                    <span>120k</span>
+                                </a>
+
+                                <a href="#" class="bi-heart me-1">
+                                    <span>42.5k</span>
+                                </a>
+
+                                <a href="#" class="bi-chat me-1">
+                                    <span>11k</span>
+                                </a>
+
+                                <a href="#" class="bi-download">
+                                    <span>50k</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-column ms-auto">
+                            <a href="#" class="badge ms-auto">
+                                <i class="bi-heart"></i>
+                            </a>
+
+                            <a href="#" class="badge ms-auto">
+                                <i class="bi-bookmark"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="custom-block d-flex">
+                        <div class="">
+                            <div class="custom-block-icon-wrap">
+                                <div class="section-overlay"></div>
+                                <a href="media" class="custom-block-image-wrap">
+                                    <img src="images/0408원우.png" class="custom-block-image img-fluid"
+                                         alt="">
+
+                                    <a href="#" class="custom-block-icon">
+                                        <i class="bi-play-fill"></i>
+                                    </a>
+                                </a>
+                            </div>
+
+                            <div class="mt-2">
+                                <a href="#" class="btn custom-btn">
+                                    Following
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="custom-block-info">
+                            <div class="custom-block-top d-flex mb-1">
+                                <small class="me-4">
+                                    <i class="bi-clock-fill custom-icon"></i>
+                                    34m 29s
+                                </small>
+
+                                <small>Episode <span class="badge">1</span></small>
+                            </div>
+
+                            <h5 class="mb-2">
+                                <a href="detail-page.html">
+                                    😃
+                                </a>
+                            </h5>
+
+                            <div class="profile-block d-flex">
+                                <img src="images/⑥원우.jfif"
+                                     class="profile-block-image img-fluid" alt="">
+
+                                <p>원우
+                                    <img src="images/verified.png" class="verified-image img-fluid" alt="">
+                                    <strong>세븐틴</strong>
+                                </p>
+                            </div>
+
+                            <p class="mb-0">자기 전 라이브</p>
+
+                            <div class="custom-block-bottom d-flex justify-content-between mt-3">
+                                <a href="#" class="bi-headphones me-1">
+                                    <span>140k</span>
+                                </a>
+
+                                <a href="#" class="bi-heart me-1">
+                                    <span>22.4k</span>
+                                </a>
+
+                                <a href="#" class="bi-chat me-1">
+                                    <span>16k</span>
+                                </a>
+
+                                <a href="#" class="bi-download">
+                                    <span>62k</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-column ms-auto">
+                            <a href="#" class="badge ms-auto">
+                                <i class="bi-heart"></i>
+                            </a>
+
+                            <a href="#" class="badge ms-auto">
+                                <i class="bi-bookmark"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 추천미디어 -->
+    <section class="topics-section section-padding pb-0" id="section_3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-12">
+                    <div class="section-title-wrap mb-5">
+                        <h4 class="section-title">추천 미디어</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <div class="custom-block custom-block-overlay">
+                        <a href="media" class="custom-block-image-wrap">
+                            <img src="images/nanatour.png"
+                                 class="custom-block-image img-fluid" alt="">
+                        </a>
+
+                        <div class="custom-block-info custom-block-overlay-info">
+                            <h5 class="mb-1">
+                                <a href="listing-page.html">
+                                    나나투어 with 세븐틴
+                                </a>
+                            </h5>
+
+                            <p class="badge mb-0">30개의 영상</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <div class="custom-block custom-block-overlay">
+                        <a href="detail-page.html" class="custom-block-image-wrap">
+                            <img src="images/in_the_soop2.png"
+                                 class="custom-block-image img-fluid" alt="">
+                        </a>
+                        <div class="custom-block-info custom-block-overlay-info">
+                            <h5 class="mb-1">
+                                <a href="listing-page.html">
+                                    인더숲 세븐틴편 시즌2
+                                </a>
+                            </h5>
+
+                            <p class="badge mb-0">21개의 영상</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <div class="custom-block custom-block-overlay">
+                        <a href="detail-page.html" class="custom-block-image-wrap">
+                            <img src="images/2023_carat_land.png"
+                                 class="custom-block-image img-fluid" alt="">
+                        </a>
+                        <div class="custom-block-info custom-block-overlay-info">
+                            <h5 class="mb-1">
+                                <a href="listing-page.html">
+                                    2023 SEVENTEEN in CARAT LAND
+                                </a>
+                            </h5>
+
+                            <p class="badge mb-0">16개의 영상</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <div class="custom-block custom-block-overlay">
+                        <a href="detail-page.html" class="custom-block-image-wrap">
+                            <img src="images/2022_be_the_sun.png"
+                                 class="custom-block-image img-fluid" alt="">
+                        </a>
+
+                        <div class="custom-block-info custom-block-overlay-info">
+                            <h5 class="mb-1">
+                                <a href="listing-page.html">
+                                    TOUR-ING : SEVENTEEN WORLD TOUR [BE THE SUN]
+                                </a>
+                            </h5>
+
+                            <p class="badge mb-0">11개의 영상</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="trending-podcast-section section-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12 col-12">
+                    <div class="section-title-wrap mb-5">
+                        <h4 class="section-title">고잉세븐틴</h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                    <div class="custom-block custom-block-full">
+                        <div class="custom-block-image-wrap">
+                            <a href="detail-page.html">
+                                <img src="images/podcast/27376480_7326766.jpg" class="custom-block-image img-fluid"
+                                     alt="">
+                            </a>
+                        </div>
+
+                        <div class="custom-block-info">
+                            <h5 class="mb-2">
+                                <a href="detail-page.html">
+                                    Vintage Show
+                                </a>
+                            </h5>
+
+                            <div class="profile-block d-flex">
+                                <img src="images/profile/woman-posing-black-dress-medium-shot.jpg"
+                                     class="profile-block-image img-fluid" alt="">
+
+                                <p>Elsa
+                                    <strong>Influencer</strong>
+                                </p>
+                            </div>
+
+                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+
+                            <div class="custom-block-bottom d-flex justify-content-between mt-3">
+                                <a href="#" class="bi-headphones me-1">
+                                    <span>100k</span>
+                                </a>
+
+                                <a href="#" class="bi-heart me-1">
+                                    <span>2.5k</span>
+                                </a>
+
+                                <a href="#" class="bi-chat me-1">
+                                    <span>924k</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="social-share d-flex flex-column ms-auto">
+                            <a href="#" class="badge ms-auto">
+                                <i class="bi-heart"></i>
+                            </a>
+
+                            <a href="#" class="badge ms-auto">
+                                <i class="bi-bookmark"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                    <div class="custom-block custom-block-full">
+                        <div class="custom-block-image-wrap">
+                            <a href="detail-page.html">
+                                <img src="images/podcast/27670664_7369753.jpg" class="custom-block-image img-fluid"
+                                     alt="">
+                            </a>
+                        </div>
+
+                        <div class="custom-block-info">
+                            <h5 class="mb-2">
+                                <a href="detail-page.html">
+                                    Vintage Show
+                                </a>
+                            </h5>
+
+                            <div class="profile-block d-flex">
+                                <img src="images/profile/cute-smiling-woman-outdoor-portrait.jpg"
+                                     class="profile-block-image img-fluid" alt="">
+
+                                <p>
+                                    Taylor
+                                    <img src="images/verified.png" class="verified-image img-fluid" alt="">
+                                    <strong>Creator</strong>
+                                </p>
+                            </div>
+
+                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+
+                            <div class="custom-block-bottom d-flex justify-content-between mt-3">
+                                <a href="#" class="bi-headphones me-1">
+                                    <span>100k</span>
+                                </a>
+
+                                <a href="#" class="bi-heart me-1">
+                                    <span>2.5k</span>
+                                </a>
+
+                                <a href="#" class="bi-chat me-1">
+                                    <span>924k</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="social-share d-flex flex-column ms-auto">
+                            <a href="#" class="badge ms-auto">
+                                <i class="bi-heart"></i>
+                            </a>
+
+                            <a href="#" class="badge ms-auto">
+                                <i class="bi-bookmark"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-12">
+                    <div class="custom-block custom-block-full">
+                        <div class="custom-block-image-wrap">
+                            <a href="detail-page.html">
+                                <img src="images/podcast/12577967_02.jpg" class="custom-block-image img-fluid"
+                                     alt="">
+                            </a>
+                        </div>
+
+                        <div class="custom-block-info">
+                            <h5 class="mb-2">
+                                <a href="detail-page.html">
+                                    Daily Talk
+                                </a>
+                            </h5>
+
+                            <div class="profile-block d-flex">
+                                <img src="images/profile/handsome-asian-man-listening-music-through-headphones.jpg"
+                                     class="profile-block-image img-fluid" alt="">
+
+                                <p>
+                                    William
+                                    <img src="images/verified.png" class="verified-image img-fluid" alt="">
+                                    <strong>Vlogger</strong>
+                                </p>
+                            </div>
+
+                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+
+                            <div class="custom-block-bottom d-flex justify-content-between mt-3">
+                                <a href="#" class="bi-headphones me-1">
+                                    <span>100k</span>
+                                </a>
+
+                                <a href="#" class="bi-heart me-1">
+                                    <span>2.5k</span>
+                                </a>
+
+                                <a href="#" class="bi-chat me-1">
+                                    <span>924k</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="social-share d-flex flex-column ms-auto">
+                            <a href="#" class="badge ms-auto">
+                                <i class="bi-heart"></i>
+                            </a>
+
+                            <a href="#" class="badge ms-auto">
+                                <i class="bi-bookmark"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+<th:block layout:fragment="script">
+    <script th:inline="javascript">
+        function sendIt() {
+            var f = document.searchForm;
+            var str = f.searchValue.value; //검색어
+            str = str.trim(); //글자 양쪽 공백제거
+
+        if(!str) {
+            alert("검색어를 입력하세요");
+            f.searchValue.focus();
+            return;
+    }
+    </script>
+</th:block>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.fanCommunity.dao.ProfileDao">
+    <resultMap id="Profile" type="Profile">
+        <result column="profile_id" property="profileId" />
+        <result column="profile_name" property="profileName" />
+        <result column="back_no" property="backNo" />
+        <result column="birth_date" property="birthDate" />
+        <result column="reg_date" property="regDate" />
+        <result column="update_date" property="updateDate" />
+        <result column="user_no" property="userNo" />
+        <collection property="user" resultMap="User"/>
+    </resultMap>
+
+    <resultMap id="User" type="User">
+        <result column="user_id" property="userId"/>
+        <result column="name" property="name" />
+        <result column="email" property="email"/>
+        <result column="password" property="password"/>
+        <result column="reg_date" property="regDate"/>
+    </resultMap>
+
+
+    <insert id="insert">
+        insert into profile
+        VALUES (profile_seq.nextval, #{profileName}, #{backNo}, #{birthDate}, null, sysdate, sysdate, #{userNo}, #{hashtagName})
+    </insert>
+
+</mapper>

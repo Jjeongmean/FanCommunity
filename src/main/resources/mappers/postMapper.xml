@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.fanCommunity.dao.PostDao">
+    <resultMap id="Post" type="Post">
+        <result column="post_id" property="postId" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+        <result column="user_id" property="userId" />
+        <result column="write_date" property="writeDate" />
+        <result column="update_date" property="updateDate" />
+        <result column="likes" property="likes" />
+        <result column="hashtag_id" property="hashtagId" />
+        <collection property="user" resultMap="User"/>
+        <collection property="profile" resultMap="Profile"/>
+        <collection property="hashtag" resultMap="Hashtag"/>
+    </resultMap>
+
+    <resultMap id="User" type="User">
+        <result column="user_id" property="userId"/>
+        <result column="name" property="name" />
+        <result column="email" property="email"/>
+        <result column="password" property="password"/>
+        <result column="reg_date" property="regDate"/>
+    </resultMap>
+
+    <resultMap id="Profile" type="Profile">
+        <result column="profile_id" property="profileId" />
+        <result column="profile_name" property="profileName" />
+        <result column="back_no" property="backNo" />
+        <result column="birth_date" property="birthDate" />
+        <result column="reg_date" property="regDate" />
+        <result column="update_date" property="updateDate" />
+        <result column="user_no" property="userNo" />
+        <collection property="user" resultMap="User"/>
+    </resultMap>
+
+    <resultMap id="Hashtag" type="Hashtag">
+        <result column="hashtag_id" property="hashtagId"/>
+        <result column="hashtag_code" property="hashtagCode"/>
+        <result column="hashtag_name" property="hashtagName"/>
+    </resultMap>
+
+    <!-- 게시물 정보를 조회하는 쿼리 -->
+    <select id="getPostById" resultType="Post">
+        SELECT post_id, title, content, user_id, write_date, update_date, likes, hashtag_code
+        FROM post
+        WHERE post_id = #{postId}
+    </select>
+
+    <select id="getPostList" parameterType="map" resultType="Post" resultMap="Post">
+        SELECT * FROM (
+        SELECT rownum rnum,  DATA .* from
+        (SELECT p.POST_ID , p.title, p.CONTENT, p.USER_ID, p.profile_name,
+        TO_CHAR(p.WRITE_DATE, 'YYYY-MM-DD') WRITE_DATE,
+        TO_CHAR(P.UPDATE_DATE, 'YYYY-MM-DD')  UPDATE_DATE,
+        P.likes, p.hashtag_id, h.hashtag_name
+        from post p
+        join hashtag h on p.hashtag_id = h.hashtag_id
+        join profile pf on pf.user_id = p.user_id
+        AND ${searchKey} LIKE '%' || #{searchValue} || '%'
+        ORDER BY p.POST_ID DESC) DATA
+        )
+        <![CDATA[
+            WHERE rnum >= #{start} AND rnum <= #{end}
+        ]]>
+    </select>
+
+    <select id="getDataCount" parameterType="map" resultType="int">
+        SELECT NVL(COUNT(*), 0)  FROM POST
+        where ${searchKey} LIKE '%' || #{searchValue} || '%'
+    </select>
+
+    <update id="updateHitCount">
+        update post set likes = likes + 1 where post_id = #{postId}
+    </update>
+
+    <select id="getReadPost" parameterType="int" resultType="post" resultMap="Post">
+        SELECT *
+        FROM  post p
+        join usertable us on p.user_id = us.user_id
+        join hashtag h on p.hashtag_id = h.hashtag_id
+        AND p.POST_ID = #{postId}
+    </select>
+
+    <insert id="insertPost" parameterType="Post">
+        insert into post
+        values(post_seq.nextval, #{profileName}, #{title}, #{content}, #{userId}, sysdate, sysdate, 0, #{hashtagId})
+    </insert>
+
+    <update id="updatePost" parameterType="Post">
+        UPDATE post SET title = #{title},
+        CONTENT = #{content}, UPDATE_DATE = SYSDATE, hashtag_id = #{hashtagId}
+        WHERE POST_ID = #{postId}
+    </update>
+
+    <delete id="deletePost" parameterType="int">
+        delete post where post_id = #{postId}
+    </delete>
+
+    <!-- 모든 게시물 정보를 조회하는 쿼리 -->
+    <select id="getAllPosts" resultType="Post">
+        SELECT post_id, title, content, user_id, write_date, update_date, likes, hashtag_code
+        FROM post
+    </select>
+
+
+
+</mapper>
